@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  muthur:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: alien-muthur:latest
+    container_name: alien-muthur
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped

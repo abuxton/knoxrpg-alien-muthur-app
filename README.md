@@ -47,6 +47,42 @@ Once the module is installed and enabled in FoundryVTT:
 2. The MU/TH/UR simulator will initialize and connect to the NodeJS server.
 3. Interact with MU/TH/UR using the command interface provided by the module.
 
+Docker usage
+------------
+
+You can run the server inside Docker — useful when running FoundryVTT separately or when deploying the simulator.
+
+Build the Docker image locally:
+
+```sh
+docker build -t alien-muthur:latest .
+```
+
+Run the container (maps host port 8080 to container 8080):
+
+```sh
+docker run -d --name alien-muthur -p 8080:8080 --env NODE_ENV=production alien-muthur:latest
+```
+
+Or use docker-compose (build + up):
+
+```sh
+docker-compose up --build -d
+```
+
+To stop and remove the container started by docker-compose:
+
+```sh
+docker-compose down
+```
+
+To view logs from the running container:
+
+```sh
+docker logs -f alien-muthur
+```
+
+
 ## File Structure
 
 
