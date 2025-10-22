@@ -82,6 +82,29 @@ To view logs from the running container:
 docker logs -f alien-muthur
 ```
 
+Makefile
+-------
+
+This repository includes a Makefile with convenient targets for Docker workflows. Examples:
+
+```sh
+# build the image
+make build
+
+# run the container (builds first)
+make run
+
+# show logs
+make logs
+
+# stop and remove the container
+make rm
+
+# use docker-compose
+make compose-up
+make compose-down
+```
+
 
 ## File Structure
 
